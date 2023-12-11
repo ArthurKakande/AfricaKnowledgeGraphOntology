@@ -14,7 +14,7 @@ A sample of a knowledge graph can be [queried here!](https://africakg.streamlit.
 ## Citation
 If you use this ontology, please cite:
 
-Kakande, Arthur S. (2023). Africa Knowledge Graph Ontology. *Retrieved from https://github.com/ArthurKakande/AfricaKnowledgeGraphOntology*
+Kakande, A. S. (2023). Africa Knowledge Graph Ontology. *Retrieved from https://github.com/ArthurKakande/AfricaKnowledgeGraphOntology*
 
 Latex bib text
 
