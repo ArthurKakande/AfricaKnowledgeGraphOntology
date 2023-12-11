@@ -1,0 +1,236 @@
+@prefix akg: <http://www.africaknowledgegraph.com/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.africaknowledgegraph.com/> .
+
+<http://www.africaknowledgegraph.com/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.africaknowledgegraph.com#hasCapitalCity
+<http://www.africaknowledgegraph.com#hasCapitalCity> rdf:type owl:ObjectProperty ;
+                                                     owl:inverseOf <http://www.africaknowledgegraph.com#isCapitalCityOf> ;
+                                                     rdfs:comment "links a country to its capital city. it serves as the inverse to \"is capital city of\""@en .
+
+
+###  http://www.africaknowledgegraph.com#hasDesert
+<http://www.africaknowledgegraph.com#hasDesert> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty <http://www.africaknowledgegraph.com#hasMountain> ;
+                                                owl:inverseOf <http://www.africaknowledgegraph.com#isFoundIn> ;
+                                                rdfs:comment "links a country to a desert it has"@en .
+
+
+###  http://www.africaknowledgegraph.com#hasMemberStates
+<http://www.africaknowledgegraph.com#hasMemberStates> rdf:type owl:ObjectProperty ;
+                                                      owl:inverseOf <http://www.africaknowledgegraph.com#isMemberStateIn> ;
+                                                      rdfs:comment "links regional bodies to their member states"@en .
+
+
+###  http://www.africaknowledgegraph.com#hasMountain
+<http://www.africaknowledgegraph.com#hasMountain> rdf:type owl:ObjectProperty ;
+                                                  owl:equivalentProperty [ owl:inverseOf <http://www.africaknowledgegraph.com#isFoundIn>
+                                                                         ] ;
+                                                  owl:inverseOf <http://www.africaknowledgegraph.com#isFoundIn> ;
+                                                  rdfs:comment "links entities e.g. countries, regions to mountains they have"@en .
+
+
+###  http://www.africaknowledgegraph.com#hasOfficialLanguage
+<http://www.africaknowledgegraph.com#hasOfficialLanguage> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf <http://www.africaknowledgegraph.com#isOfficialLanguageOf> ;
+                                                          rdfs:comment "used to denote the official or national language of a country"@en .
+
+
+###  http://www.africaknowledgegraph.com#hasRiver
+<http://www.africaknowledgegraph.com#hasRiver> rdf:type owl:ObjectProperty ;
+                                               owl:inverseOf <http://www.africaknowledgegraph.com#isLocatedIn> ;
+                                               rdfs:comment "links a country or region to a river it has"@en .
+
+
+###  http://www.africaknowledgegraph.com#isCapitalCityOf
+<http://www.africaknowledgegraph.com#isCapitalCityOf> rdf:type owl:ObjectProperty ;
+                                                      rdfs:comment "links a capital city to the country it belongs to"@en .
+
+
+###  http://www.africaknowledgegraph.com#isFoundIn
+<http://www.africaknowledgegraph.com#isFoundIn> rdf:type owl:ObjectProperty ;
+                                                owl:equivalentProperty [ owl:inverseOf <http://www.africaknowledgegraph.com#hasDesert> ;
+                                                                         owl:equivalentProperty [ owl:inverseOf <http://www.africaknowledgegraph.com#hasMountain>
+                                                                                                ]
+                                                                       ] ;
+                                                rdfs:comment "links physical features such as deserts to countries where they are found"@en .
+
+
+###  http://www.africaknowledgegraph.com#isLocatedIn
+<http://www.africaknowledgegraph.com#isLocatedIn> rdf:type owl:ObjectProperty ;
+                                                  rdfs:comment "links a feature to a country it belongs to"@en .
+
+
+###  http://www.africaknowledgegraph.com#isMemberStateIn
+<http://www.africaknowledgegraph.com#isMemberStateIn> rdf:type owl:ObjectProperty ;
+                                                      rdfs:comment "denotes a country being a part of a regional body"@en .
+
+
+###  http://www.africaknowledgegraph.com#isOfficialLanguageOf
+<http://www.africaknowledgegraph.com#isOfficialLanguageOf> rdf:type owl:ObjectProperty ;
+                                                           rdfs:comment "links an official language to a country"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.africaknowledgegraph.com#AgriculturalProducts
+<http://www.africaknowledgegraph.com#AgriculturalProducts> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.africaknowledgegraph.com#naturalResources> ;
+                                                           rdfs:comment "captures agricultural products of a country"@en .
+
+
+###  http://www.africaknowledgegraph.com#CapitalCity
+<http://www.africaknowledgegraph.com#CapitalCity> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://www.africaknowledgegraph.com#Geography> ;
+                                                  rdfs:comment "denotes the main city, the capital of the country"@en .
+
+
+###  http://www.africaknowledgegraph.com#Country
+<http://www.africaknowledgegraph.com#Country> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.africaknowledgegraph.com#Geography> ;
+                                              rdfs:comment "denotes countries in Africa"@en .
+
+
+###  http://www.africaknowledgegraph.com#Demographics
+<http://www.africaknowledgegraph.com#Demographics> rdf:type owl:Class ;
+                                                   rdfs:comment "Includes demographic information, such as population size, ethnic groups, languages spoken, religions, and urbanization levels across different countries and regions in Africa. Highlights any significant demographic trends or patterns."@en .
+
+
+###  http://www.africaknowledgegraph.com#Deserts
+<http://www.africaknowledgegraph.com#Deserts> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.africaknowledgegraph.com#physicalFeatures> .
+
+
+###  http://www.africaknowledgegraph.com#Economy
+<http://www.africaknowledgegraph.com#Economy> rdf:type owl:Class ;
+                                              rdfs:comment "Captures economic data of African countries, such as GDP (Gross Domestic Product), major industries, exports, imports, and key economic indicators like inflation rate, unemployment rate, and poverty levels or any significant economic developments or challenges of the country."@en .
+
+
+###  http://www.africaknowledgegraph.com#Geography
+<http://www.africaknowledgegraph.com#Geography> rdf:type owl:Class ;
+                                                rdfs:comment "Includes data on the countries, regions, cities, and physical features of Africa, such as rivers, mountains, and deserts. Provides information on their locations, sizes, and any relevant geographical characteristics."@en .
+
+
+###  http://www.africaknowledgegraph.com#Languages
+<http://www.africaknowledgegraph.com#Languages> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.africaknowledgegraph.com#Demographics> ;
+                                                rdfs:comment "Includes information on languages spoken in a country"@en .
+
+
+###  http://www.africaknowledgegraph.com#Minerals
+<http://www.africaknowledgegraph.com#Minerals> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.africaknowledgegraph.com#naturalResources> ;
+                                               rdfs:comment "captures minerals produced by a country"@en .
+
+
+###  http://www.africaknowledgegraph.com#Mountains
+<http://www.africaknowledgegraph.com#Mountains> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.africaknowledgegraph.com#physicalFeatures> .
+
+
+###  http://www.africaknowledgegraph.com#Population
+<http://www.africaknowledgegraph.com#Population> rdf:type owl:Class ;
+                                                 rdfs:subClassOf <http://www.africaknowledgegraph.com#Demographics> ;
+                                                 rdfs:comment "includes details on population"@en .
+
+
+###  http://www.africaknowledgegraph.com#RegionalEconomicCommunities
+<http://www.africaknowledgegraph.com#RegionalEconomicCommunities> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf <http://www.africaknowledgegraph.com#Economy> ;
+                                                                  rdfs:comment "Information on Africa's diplomatic relationships, regional organizations (e.g., African Union), partnerships with other continents, and involvement in global affairs. Highlight any significant alliances, conflicts, or collaborations."@en .
+
+
+###  http://www.africaknowledgegraph.com#Religion
+<http://www.africaknowledgegraph.com#Religion> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.africaknowledgegraph.com#Demographics> ;
+                                               rdfs:comment "captures information on religious entities in Africa and other related details"@en .
+
+
+###  http://www.africaknowledgegraph.com#RenewableResources
+<http://www.africaknowledgegraph.com#RenewableResources> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.africaknowledgegraph.com#naturalResources> ;
+                                                         rdfs:comment "captures renewable resources of a country."@en .
+
+
+###  http://www.africaknowledgegraph.com#Rivers
+<http://www.africaknowledgegraph.com#Rivers> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.africaknowledgegraph.com#physicalFeatures> .
+
+
+###  http://www.africaknowledgegraph.com#economicIndicators
+<http://www.africaknowledgegraph.com#economicIndicators> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://www.africaknowledgegraph.com#Economy> ;
+                                                         rdfs:comment "Includes economic data on African countries, such as GDP (Gross Domestic Product), major industries, exports, imports, and key economic indicators like inflation rate, unemployment rate, and poverty levels. Highlight any significant economic developments or challenges."@en .
+
+
+###  http://www.africaknowledgegraph.com#naturalResources
+<http://www.africaknowledgegraph.com#naturalResources> rdf:type owl:Class ;
+                                                       rdfs:comment "Highlights the abundant natural resources found in Africa, including minerals, petroleum, agricultural products, and renewable resources. Provides information on the distribution, extraction, and economic significance of these resources."@en .
+
+
+###  http://www.africaknowledgegraph.com#physicalFeatures
+<http://www.africaknowledgegraph.com#physicalFeatures> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://www.africaknowledgegraph.com#Geography> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.africaknowledgegraph.com#Education> rdfs:comment "Provides information on educational systems, literacy rates, and initiatives focused on improving education in Africa."@en .
+
+
+<http://www.africaknowledgegraph.com#Health> rdfs:comment "Includes data on healthcare systems, major health challenges, and key indicators like life expectancy, infant mortality rate, and disease prevalence in different African countries."@en .
+
+
+<http://www.africaknowledgegraph.com#Infrastructure> rdfs:comment "Provides details on the transportation networks, road systems, railways, airports, and major infrastructure projects in different African countries. Highlights initiatives to improve connectivity and facilitate trade and travel within Africa."@en .
+
+
+<http://www.africaknowledgegraph.com#Politics> rdfs:comment "Provides information on the political systems, governments, and major political parties in different African countries. Includes details on leadership, elections, political ideologies, and any notable political events or movements."@en .
+
+
+<http://www.africaknowledgegraph.com#aka> rdfs:comment "also known as, used when referring another name"@en .
+
+
+<http://www.africaknowledgegraph.com#dissolvedIn> rdfs:comment "used to denote when an establishment was dissolved"@en .
+
+
+<http://www.africaknowledgegraph.com#firstEstablishedIn> rdfs:comment "used to denote when an establishment was first created"@en .
+
+
+<http://www.africaknowledgegraph.com#hasCapital> rdfs:comment "used to link a country to its capital city"@en .
+
+
+<http://www.africaknowledgegraph.com#hasCoordinates> rdfs:comment "used to denote the geographical coordinates of an individual such as a river, mountain, etc."@en .
+
+
+<http://www.africaknowledgegraph.com#hasHeight> rdfs:comment "used to denote the height of a feature e.g. a mountain"@en .
+
+
+<http://www.africaknowledgegraph.com#hasLanguage> rdfs:comment "used to denote the lanyuage spoken by an individual or entity e.g. Uganda hasLanguage Luganda"@en .
+
+
+<http://www.africaknowledgegraph.com#hasPopulation> rdfs:comment "used to denote the total number of individuals in an entity e.g. a country"@en .
+
+
+<http://www.africaknowledgegraph.com#ranksAt> rdfs:comment "used to denote the rank of an entity e.g. the tallest mountians in Africa in their order from the tallest"@en .
+
+
+<http://www.africaknowledgegraph.com#reEstablishedIn> rdfs:comment "used to denote when an entity or establishment was re-established after being dissolved"@en .
+
+
+<http://www.africaknowledgegraph.com#Congo(Kinshasa)> rdfs:label "DR Congo"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
