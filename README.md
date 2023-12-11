@@ -2,6 +2,7 @@
 An Ontology for factual information about Africa
 
 The preferred prefix is **akg**
+
 The associated namespace of the ontology is <http://www.africaknowledgegraph.com#>
 
 The ontology has been edited on [Protégé](https://protege.stanford.edu/) and available in the [Turtle format](https://www.w3.org/TR/turtle/)
@@ -28,7 +29,8 @@ Latex bib text
 }}
 }
 
-This work is licensed under a Creative Commons Attribution 4.0 International License.
+
+**This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).**
 
 # Ontology for Africa Knowledge graph information
 
