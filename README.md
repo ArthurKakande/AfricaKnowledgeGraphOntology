@@ -5,7 +5,7 @@ The preferred prefix is **akg**
 
 The associated namespace of the ontology is <http://www.africaknowledgegraph.com#>
 
-The ontology has been edited on [Protégé](https://protege.stanford.edu/) and available in the [Turtle format](https://www.w3.org/TR/turtle/)
+The ontology has been edited with [Protégé](https://protege.stanford.edu/) and is available in the [Turtle format](https://www.w3.org/TR/turtle/)
 
 The model uses new relationships, in order to represent the relevant information as a set of interconnected events. 
 The ontology for facts and information about Africa and all the countries it contains over a knowledge graph.
