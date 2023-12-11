@@ -11,6 +11,8 @@ The ontology for facts and information about Africa and all the countries it con
 
 A sample of a knowledge graph can be [queried here!](https://africakg.streamlit.app/)
 
+This ontology is continuously updated as the respective knowledge graph grows. Below are some of its object and data properties.
+
 ## Citation
 If you use this ontology, please cite:
 
